@@ -1,16 +1,19 @@
-const axios = require('axios');
 const Plant = require('../models/PlantSchema');
 
 // exporta modulos contendo os metodos
 module.exports = {
     async store(req, res) {
-        const { name, diameter, height, latitude, longitude } = req.body
-        const date = new Date()
+        const { name, string, diameter, height, latitude, longitude, date } = req.body
+
         
-        
+        arrayDiameters = diameter.split(",").map(num => {
+            return Number(num)
+        })
+
         const plant = await Plant.create({
             name,
-            diameter,
+            string,
+            diameter: arrayDiameters,
             height,
             latitude,
             longitude,
