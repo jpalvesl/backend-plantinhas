@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const PlantSchema = new mongoose.Schema({
   name: String,
+  folder: String,
   string: Boolean,
   diameter: [Number],
   height: Number,
