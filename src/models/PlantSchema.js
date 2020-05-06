@@ -1,14 +1,42 @@
 const mongoose = require('mongoose');
 
 const PlantSchema = new mongoose.Schema({
-  name: String,
-  folder: String,
-  string: Boolean,
-  diameter: [Number],
-  height: Number,
-  latitude: Number,
-  longitude: Number,
-  date: Date
+  name: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+    required: true,
+  },
+  uf: {
+    type: String,
+    required: true,
+  },
+  string: {
+    type: Boolean,
+    required: true,
+  },
+  diameter: [{
+    type: [Number],
+    required: true,
+  }],
+  height: {
+    type: Number,
+    required: true,
+  },
+  latitude: {
+    type: Number,
+    required: true,
+  },
+  longitude: {
+    type: Number,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
 })
 
 module.exports = mongoose.model('Plant', PlantSchema);

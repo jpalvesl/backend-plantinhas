@@ -14,7 +14,8 @@ routes.get('/all', PlantController.index)
 routes.post('/plants', celebrate({
   [Segments.BODY]: Joi.object().keys({
     name: Joi.string().required(),
-    folder: Joi.string().required(),
+    city: Joi.string().required(),
+    uf: Joi.string().required(),
     string: Joi.boolean ().required(),
     diameter: Joi.array().required(),
     height: Joi.number().required(),
