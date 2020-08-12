@@ -22,6 +22,13 @@ routes.post('/plants', celebrate({
     latitude: Joi.number().required(),
     longitude: Joi.number().required(),
     date: Joi.date().required(),
+
+    part: Joi.object().keys({
+      name: Joi.string().required(),
+      ndvi: Joi.number().required().max(1).min(-1),
+      latitude: Joi.number().required(),
+      longitude: Joi.number().required(),
+    })
   })
 }), PlantController.store)
 

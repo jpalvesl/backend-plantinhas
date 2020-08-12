@@ -37,6 +37,10 @@ const PlantSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  part: {
+    type: Object,
+    required: true
+  }
 })
 
 module.exports = mongoose.model('Plant', PlantSchema);

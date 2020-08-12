@@ -3,7 +3,7 @@ const Plant = require('../models/PlantSchema');
 // exporta modulos contendo os metodos
 module.exports = {
     async store(req, res) {
-        const { name, city, uf, string, diameter, height, latitude, longitude, date } = req.body
+        const { name, city, uf, string, diameter, height, latitude, longitude, date, part } = req.body
 
         const plant = await Plant.create({
           name,
@@ -14,7 +14,8 @@ module.exports = {
           height,
           latitude,
           longitude,
-          date
+          date,
+          part
         })
 
         return res.json(plant)
