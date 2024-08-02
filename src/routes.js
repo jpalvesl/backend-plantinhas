@@ -6,7 +6,7 @@ const PlantController = require('./controllers/PlantController');
 const routes = Router()
 
 routes.get('/', (req, res) => {
-    res.json({routes: ['/all, /plantas']})
+    res.json({routes: ['/all, /plants']})
 })
 
 routes.get('/all', PlantController.index)
